@@ -1,0 +1,21 @@
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-content nav {
+  margin-top: 1rem;
+}
+
+.footer-content nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-content nav a:hover {
+  color: var(--primary-color);
+}

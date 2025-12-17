@@ -1,0 +1,14 @@
+<section class="hero">
+  <div 
+    class="hero-bg" 
+    [ngStyle]="{'background-image': 'url(' + slides[currentImage].image + ')'}">
+  </div>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>{{ slides[currentImage].title }}</h1>
+    <p>{{ slides[currentImage].subtitle }}</p>
+    <button class="btn-primary">{{ slides[currentImage].button }}</button>
+  </div>
+</section>

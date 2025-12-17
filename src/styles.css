@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #3d052a;   /* Wine Main */
+  --text-light: #e0dddffa;   /* Light Gray */
+  --text-white: #ffffff;
+  --card-bg: #2a021f;        /* Dark wine background */
+  --gray-light: #B0B0B0;
+  --font-family: 'Poppins', sans-serif;
+}
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}

@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--primary-color); /* Wine background */
+  color: var(--btn-text);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.nav-links li a {
+  color: var(--btn-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--secondary-color); /* Light gray */
+}
