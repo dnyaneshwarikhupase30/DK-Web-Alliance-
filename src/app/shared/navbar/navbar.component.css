@@ -1,27 +1,151 @@
+/* Navbar Styles for DK Web Alliance */
 .navbar {
+  background: rgba(32, 1, 25, 0.95); /* dark wine color */
+backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(32, 1, 25, 0.5);
+}
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  background-color: var(--primary-color); /* Wine background */
-  color: var(--btn-text);
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  width: 100%;
+
+}
+
+/* Logo */
+.logo {
+  flex: 0 0 auto;
+}
+
+.logo a {
+   text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #d7d0d5; /* gray text */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.logo a:hover {
+  text-shadow: 0 0 8px #d7d0d5, 0 0 15px rgba(215, 208, 213, 0.5);
+    transform: scale(1.02);
+}
+
+/* Nav Links */
+.nav-links {
+   list-style: none;
+  display: flex;
+  gap: 1rem; /* spacing between links */
+  margin: 0;
+  padding: 0;
+  margin-left: auto; /* push links to the right */
+  justify-content: flex-end; /* align links to the right edge */
+  width: 100%;
 }
 
 .nav-links li {
-  display: inline-block;
-  margin-left: 2rem;
+  position: relative;
+  text-align: left;
 }
 
 .nav-links li a {
-  color: var(--btn-text);
+ position: relative;
   text-decoration: none;
+  color: #dce3f5;
+  font-size: 0.75rem;
   font-weight: 500;
-  transition: color 0.3s;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+  padding-bottom: 5px;
 }
 
-.nav-links li a:hover {
-  color: var(--secondary-color); /* Light gray */
+/* Hover underline + glow effect */
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d7d0d5;
+  box-shadow: 0 0 8px #d7d0d5, 0 0 15px rgba(32, 1, 25, 0.5);
+  transition: width 0.3s ease;
+}
+
+/* Hover underline */
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Always show underline for active link */
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #d7d0d5;
+  text-shadow: 0 0 8px #d7d0d5, 0 0 15px rgba(32, 1, 25, 0.5);
+}
+
+/* Hamburger menu icon */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: #d7d0d5;
+  transition: all 0.3s ease;
+}
+
+/* Responsive: Tablet & Mobile */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(32, 1, 25, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo a {
+    font-size: 1.2rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.8rem;
+  }
 }

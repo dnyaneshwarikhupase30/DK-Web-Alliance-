@@ -1,16 +1,46 @@
-<section class="contact">
-  <h2>Contact Us</h2>
-  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-    <div class="form-group">
-      <input type="text" name="name" ngModel placeholder="Your Name" required />
+<section class="contact-container">
+
+  <div class="contact-left">
+    <h2>Contact Us</h2>
+    <p class="tagline">We’d love to hear from you. Reach out anytime.</p>
+
+    <div class="info-item">
+      <i class="fa-solid fa-phone"></i>
+      <span>+91 9359518058</span>
     </div>
-    <div class="form-group">
-      <input type="email" name="email" ngModel placeholder="Your Email" required />
+
+    <div class="info-item">
+      <i class="fa-solid fa-envelope"></i>
+      <span>dkweballiance@gmail.com</span>
     </div>
-    <div class="form-group">
-      <textarea name="message" ngModel placeholder="Your Message" required></textarea>
+
+    <div class="info-item">
+      <i class="fa-solid fa-clock"></i>
+      <span>Response Time: Within 1 hour</span>
     </div>
-    <button type="submit" class="btn" [disabled]="!contactForm.valid">Send Message</button>
-  </form>
-  <p *ngIf="submitted" class="success-msg">Thank you! We will contact you soon.</p>
+
+  </div>
+
+  <div class="contact-right">
+    <form #form="ngForm" (ngSubmit)="submitForm()">
+
+      <input name="name" [(ngModel)]="formData.name" type="text" placeholder="Your Name" required>
+
+      <input name="email" [(ngModel)]="formData.email" type="email" placeholder="Email Address" required>
+
+      <input name="phone" [(ngModel)]="formData.phone" type="tel" placeholder="Phone Number">
+
+      <textarea rows="6" name="message" [(ngModel)]="formData.message" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Email</button>
+
+      <button type="button" class="whatsapp-btn" (click)="sendWhatsApp()">Contact on WhatsApp</button>
+
+    </form>
+  </div>
+
+  <div class="popup" *ngIf="showPopup">
+      Message Sent Successfully 🎉
+  </div>
+
 </section>

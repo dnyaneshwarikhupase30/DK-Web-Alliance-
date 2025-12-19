@@ -1,9 +1,28 @@
 <nav class="navbar">
-  <div class="logo">DK Web Alliance</div>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Portfolio</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <a routerLink="/home">DK Web Alliance</a>
+    </div>
+
+    <!-- Desktop Links -->
+    <ul class="nav-links" [class.open]="menuOpen">
+
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/services">Services</a></li>
+      <li><a routerLink="/portfolio">Portfolio</a></li>
+       <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      
+    </ul>
+
+    <!-- Hamburger -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
 </nav>

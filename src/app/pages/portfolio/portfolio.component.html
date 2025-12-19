@@ -1,33 +1,29 @@
-<section class="portfolio">
-  <h2>Our Portfolio</h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="assets/portfolio1.jpg" alt="Project 1" />
-      <div class="overlay">
-        <h3>Project 1</h3>
-        <p>Web Development</p>
+<section class="portfolio-hero">
+  <h1>Our Completed Work</h1>
+  <p>Browse real projects we have developed and launched live on the web.</p>
+</section>
+
+<section class="portfolio-container">
+
+  <div *ngFor="let p of projects" class="project-card">
+    <a [href]="p.link" target="_blank">
+      <div class="img-wrapper">
+        <img [src]="p.img" alt="{{p.title}}">
       </div>
-    </div>
-    <div class="portfolio-item">
-      <img src="assets/portfolio2.jpg" alt="Project 2" />
-      <div class="overlay">
-        <h3>Project 2</h3>
-        <p>E-commerce</p>
+      <div class="project-info">
+        <h3>{{p.title}}</h3>
+        <p>{{p.desc}}</p>
+        <span class="tech">{{p.tech}}</span>
+        <br>
+        <div class="visit-btn">Visit Live</div>
       </div>
-    </div>
-    <div class="portfolio-item">
-      <img src="assets/portfolio3.jpg" alt="Project 3" />
-      <div class="overlay">
-        <h3>Project 3</h3>
-        <p>UI/UX Design</p>
-      </div>
-    </div>
-    <div class="portfolio-item">
-      <img src="assets/portfolio4.jpg" alt="Project 4" />
-      <div class="overlay">
-        <h3>Project 4</h3>
-        <p>Branding</p>
-      </div>
-    </div>
+    </a>
   </div>
+
+</section>
+
+<section class="portfolio-cta">
+  <h2>Have a project idea?</h2>
+  <p>Let's build something great together!</p>
+  <a routerLink="/contact" class="cta-btn">Get In Touch</a>
 </section>

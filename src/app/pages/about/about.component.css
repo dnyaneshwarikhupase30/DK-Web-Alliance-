@@ -1,0 +1,173 @@
+.about-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, rgba(75,2,58,0.7) 0%, rgba(32,1,25,0.95) 100%);
+  color: #d7d0d5;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 1, 25, 0.5);
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  text-align: center;
+}
+
+.about-content h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.personal-touch {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  font-style: italic;
+  color: #e0cfe0;
+}
+
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: rgba(75,2,58,0.3);
+  padding: 2.5rem;
+  border-radius: 15px;
+  flex: 1 1 280px;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(215,208,213,0.05);
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover::before {
+  background: transparent;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(215,208,213,0.6);
+  background: radial-gradient(circle, rgba(184, 143, 163, 1) 0%, rgba(94, 18, 66, 1) 75%);
+}
+
+.card h3, .card p {
+  position: relative;
+  z-index: 1;
+}
+
+.card h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+/* Existing base styles remain the same */
+
+/* Desktop: default already defined */
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .about-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .about-content p {
+    font-size: 1.2rem;
+  }
+
+  .about-cards {
+    gap: 2rem;
+  }
+
+  .card {
+    max-width: 300px;
+    padding: 2rem;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 768px) {
+  .about-content h2 {
+    font-size: 2.4rem;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+  }
+
+  .about-cards {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 1.8rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .about-page {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .personal-touch {
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
