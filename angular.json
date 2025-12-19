@@ -30,10 +30,9 @@
           "configurations": {
             "production": {
               "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                {"type": "initial",
+    "maximumWarning": "250kb",
+    "maximumError": "300kb"
                 },
                 {
                   "type": "anyComponentStyle",
