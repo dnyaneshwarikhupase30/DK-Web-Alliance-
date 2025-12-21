@@ -1,54 +1,24 @@
-<section id="services" class="services-section">
-  <div class="container">
-    <h2 class="sec-title">Our Services</h2>
-    <p class="sec-subtitle">
-      We provide modern web solutions that help businesses grow digitally.
-    </p>
+<section class="services-page">
 
-    <div class="service-grid">
+  <div class="overlay"></div>
 
-      <!-- 1 -->
-      <div class="service-card">
-        <div class="icon">💻</div>
-        <h3>Website Development</h3>
-        <p>Custom websites designed using latest technologies.</p>
-      </div>
+  <div class="container reveal">
+    <h2 class="title">Our Services</h2>
+    <p class="subtitle">We offer modern web solutions to grow your business online.</p>
 
-      <!-- 2 -->
-      <div class="service-card">
-        <div class="icon">⚙️</div>
-        <h3>Web Application</h3>
-        <p>Fully functional web apps tailored to your needs.</p>
-      </div>
+    <div class="cards-wrapper">
 
-      <!-- 3 -->
-      <div class="service-card">
-        <div class="icon">🤖</div>
-        <h3>Chatbot Development</h3>
-        <p>Rule-based and dynamic chatbots for websites.</p>
-      </div>
+      <div *ngFor="let s of services; let i=index"
+           class="service-card reveal"
+           [style.animationDelay]="(0.3 + i*0.15) + 's'">
 
-      <!-- 4 -->
-      <div class="service-card">
-        <div class="icon">🎨</div>
-        <h3>UI/UX Design</h3>
-        <p>Beautiful interfaces with great user experience.</p>
-      </div>
+        <div class="icon">{{s.icon}}</div>
+        <h3>{{s.title}}</h3>
+        <p>{{s.description}}</p>
 
-      <!-- 5 -->
-      <div class="service-card">
-        <div class="icon">⚡</div>
-        <h3>Automation Systems</h3>
-        <p>Automating business workflow using smart tools.</p>
-      </div>
-
-      <!-- 6 -->
-      <div class="service-card">
-        <div class="icon">🛠</div>
-        <h3>Website Maintenance</h3>
-        <p>Bug fixing, updates and feature improvements.</p>
       </div>
 
     </div>
   </div>
+
 </section>

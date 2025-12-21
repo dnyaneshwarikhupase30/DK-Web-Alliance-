@@ -1,53 +1,85 @@
-/* Hero Title */
+/* Hero Section */
 .portfolio-hero {
   text-align: center;
   padding: 60px 20px 30px;
-  background: radial-gradient(circle, rgba(184,143,163,1) 0%, rgba(94,18,66,1) 75%);
+  background: linear-gradient(135deg, #2d0026, #5b0d4d, #a04a7a, #e7c7db);
+  background-size: 300% 300%;
+  animation: moveGradient 12s infinite alternate ease-in-out;
   color: #ede6eb;
+  position: relative;
+  overflow: hidden;
 }
 
 .portfolio-hero h1 {
   font-size: 38px;
   margin-bottom: 6px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
 }
 
 .portfolio-hero p {
   font-size: 16px;
   color: #d7d0d5;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s 0.2s forwards;
 }
 
-/* Projects grid */
+@keyframes moveGradient{
+  0%{background-position:0 0;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0 100%;}
+}
+
+/* Projects Grid */
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
   gap: 30px;
   padding: 40px 8%;
-  background: #5e1242;
+  background: radial-gradient(circle at top left, #26051d, #46002c);
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card {
   background: rgba(255,255,255,0.08);
   border-radius: 12px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* button bottom */
   transition: 0.3s ease;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.04);
   background: rgba(255,255,255,0.15);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 25px rgba(215,143,163,0.4), 0 0 20px rgba(215,143,163,0.25);
 }
 
 .img-wrapper img {
   width: 100%;
-  height: 170px;
+  height: 180px;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
 }
 
 .project-info {
   padding: 16px 14px;
   color: #e8dce4;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-info h3 {
@@ -69,27 +101,30 @@
 }
 
 .visit-btn {
-  display: inline-block;
+  display: block;
   padding: 8px 14px;
   background: #d7d0d5;
   color: #5e1242;
   border-radius: 5px;
   font-size: 14px;
   text-align: center;
-  margin-top: 8px;
+  margin: 0 auto 10px auto;
   cursor: pointer;
   transition: 0.3s ease;
+  width: fit-content;
+  margin-top: auto;
 }
 
 .visit-btn:hover {
   background: white;
+  transform: translateY(-2px);
 }
 
 /* CTA */
 .portfolio-cta {
   text-align: center;
   padding: 50px 20px;
-  background: radial-gradient(circle, rgba(94,18,66,1) 0%, rgba(184,143,163,1) 75%);
+  background: radial-gradient(circle, rgba(80,10,50,1) 0%, rgba(160,100,140,1) 75%);
   color: white;
 }
 
@@ -102,18 +137,29 @@
   font-weight: bold;
   border-radius: 6px;
   text-decoration: none;
-  transition: .3s;
+  transition: .3s, transform 0.3s ease;
 }
 
 .cta-btn:hover {
   background: #f2f2f2;
+  transform: translateY(-2px);
+}
+
+/* Fade-in scroll animation */
+.fade-in.visible, .project-card.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
 @media(max-width: 900px){
-  .portfolio-container {
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  }
+  .portfolio-container { grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
 }
 
 @media(max-width: 600px){

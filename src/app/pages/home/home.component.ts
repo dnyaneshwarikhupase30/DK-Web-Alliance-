@@ -17,30 +17,41 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     setInterval(() => {
-      this.currentImage = (this.currentImage + 1) % this.slides.length;
-    }, 4000);
+      const next = (this.currentImage + 1) % this.slides.length;
+      this.fadeSlide(next);
+    }, 4500);
+  }
+
+  fadeSlide(nextIndex: number) {
+    const slider = document.querySelector('.hero-bg') as HTMLElement;
+    slider.classList.add('fade-out');
+
+    setTimeout(() => {
+      this.currentImage = nextIndex;
+      slider.classList.remove('fade-out');
+    }, 400);
   }
 
   ngAfterViewInit() {
-    this.addScrollAnimation();
+    this.animateScrollSections();
   }
 
-  addScrollAnimation() {
-    const elements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
+  animateScrollSections() {
+    const observedElements = document.querySelectorAll('.fade-in, .service-box, .portfolio-item');
+
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
-    elements.forEach(el => observer.observe(el));
+    observedElements.forEach(el => observer.observe(el));
   }
 
   goToSection(id: string) {
-    const el = document.getElementById(id);
-    if(el) el.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

@@ -6,19 +6,21 @@
 <section class="portfolio-container">
 
   <div *ngFor="let p of projects" class="project-card">
-    <a [href]="p.link" target="_blank">
-      <div class="img-wrapper">
-        <img [src]="p.img" alt="{{p.title}}">
-      </div>
-      <div class="project-info">
-        <h3>{{p.title}}</h3>
-        <p>{{p.desc}}</p>
-        <span class="tech">{{p.tech}}</span>
-        <br>
-        <div class="visit-btn">Visit Live</div>
-      </div>
-    </a>
-  </div>
+  <a [href]="p.link" target="_blank">
+    <div class="img-wrapper">
+      <img [src]="p.img" alt="{{p.title}}">
+    </div>
+
+    <div class="project-info">
+      <h3>{{p.title}}</h3>
+      <p>{{p.desc}}</p>
+      <span class="tech">{{p.tech}}</span>
+    </div>
+    <div class="visit-btn">Visit Live</div>
+  </a>
+</div>
+
+
 
 </section>
 
