@@ -121,6 +121,7 @@ backdrop-filter: blur(10px);
 
   .navbar{
     padding: 0.9rem 1.8rem;
+    max-width: fit-content;
   }
 
   .container{
@@ -167,6 +168,7 @@ backdrop-filter: blur(10px);
 
   .navbar{
     padding: 0.8rem 1.2rem;
+    max-width: fit-content;
   }
 
   .logo a{
@@ -191,7 +193,9 @@ backdrop-filter: blur(10px);
 
 /* Extra small devices */
 @media (max-width: 400px){
-
+.navbar{
+  max-width: fit-content;
+}
   .logo a{
     font-size: 1rem;
   }

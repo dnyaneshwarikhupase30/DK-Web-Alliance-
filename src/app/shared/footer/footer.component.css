@@ -1,40 +1,53 @@
 .footer {
   background: rgba(32, 1, 25, 0.95);
-  padding: 2rem 3rem;
+  padding: 3rem 4rem;
   font-size: 0.9rem;
+  width: 100%;
 }
 
+/* FULL WIDTH CONTAINER */
 .footer .container {
+  max-width: 1400px;        /* content readable */
+  margin: 0 auto;          /* center */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
 }
 
+/* FOOTER SECTION */
 .footer .footer-section {
-  flex: 1 1 200px;
-  text-align: center;
+  flex: 1 1 220px;
+  min-width: 220px;
+  text-align: left;
 }
 
+/* HEADINGS */
 .footer .footer-section h3 {
   font-size: 1rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #d7d0d5;
 }
 
+/* TEXT */
 .footer .footer-section p,
 .footer .footer-section li {
   color: white;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 0.85rem;
 }
 
+/* LINKS */
 .footer .footer-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.footer .footer-section li {
+  margin-bottom: 0.4rem;
 }
 
 .footer .footer-section li a {
@@ -45,6 +58,7 @@
   padding-bottom: 3px;
 }
 
+/* LINK HOVER LINE */
 .footer .footer-section li a::after {
   content: '';
   position: absolute;
@@ -64,23 +78,67 @@
   text-shadow: 0 0 6px #d7d0d5, 0 0 12px rgba(32,1,25,0.5);
 }
 
+/* FOOTER BOTTOM */
 .footer .footer-bottom {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
   border-top: 1px solid rgba(215, 208, 213, 0.3);
-  padding-top: 1rem;
+  padding-top: 1.2rem;
   font-size: 0.8rem;
+  color: #eee;
 }
 
-/* Responsive */
+/* ===================== */
+/* RESPONSIVE TABLET */
+/* ===================== */
+@media (max-width: 992px) {
+  .footer {
+    padding: 2.5rem 2rem;
+  }
+
+  .footer .container {
+    gap: 2rem;
+  }
+}
+
+/* ===================== */
+/* RESPONSIVE MOBILE */
+/* ===================== */
 @media (max-width: 768px) {
+  .footer {
+    padding: 2.5rem 1.5rem;
+  }
+
   .footer .container {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    text-align: center;
   }
 
   .footer .footer-section {
     text-align: center;
+    width: 100%;
+  }
+
+  .footer .footer-section h3 {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===================== */
+/* SMALL MOBILE */
+/* ===================== */
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer .footer-section p,
+  .footer .footer-section li {
+    font-size: 0.8rem;
+  }
+
+  .footer .footer-bottom {
+    font-size: 0.75rem;
   }
 }
