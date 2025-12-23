@@ -94,6 +94,7 @@
 @media (max-width: 992px) {
   .footer {
     padding: 2.5rem 2rem;
+     width: 100%;
   }
 
   .footer .container {
@@ -107,6 +108,7 @@
 @media (max-width: 768px) {
   .footer {
     padding: 2.5rem 1.5rem;
+    width: 100%;
   }
 
   .footer .container {
@@ -131,6 +133,7 @@
 @media (max-width: 480px) {
   .footer {
     padding: 2rem 1rem;
+    width: 100%;
   }
 
   .footer .footer-section p,

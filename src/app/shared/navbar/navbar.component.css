@@ -121,8 +121,7 @@ backdrop-filter: blur(10px);
 
   .navbar{
     padding: 0.9rem 1.8rem;
-    max-width: fit-content;
-  }
+ width: 100%;  }
 
   .container{
     flex-wrap: wrap;
@@ -168,8 +167,7 @@ backdrop-filter: blur(10px);
 
   .navbar{
     padding: 0.8rem 1.2rem;
-    max-width: fit-content;
-  }
+ width: 100%;  }
 
   .logo a{
     font-size: 1.1rem;
@@ -194,8 +192,7 @@ backdrop-filter: blur(10px);
 /* Extra small devices */
 @media (max-width: 400px){
 .navbar{
-  max-width: fit-content;
-}
+ width: 100%;}
   .logo a{
     font-size: 1rem;
   }
