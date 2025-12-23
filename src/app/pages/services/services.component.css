@@ -109,15 +109,108 @@
   transform:translateY(0);
 }
 
-/******** responsive ********/
+/* ===============================
+   RESPONSIVE – SERVICES PAGE
+   =============================== */
 
-@media(max-width:900px){
-  .title{font-size:2.5rem;}
+/* Tablet */
+@media (max-width: 1024px){
+
+  .services-page{
+    padding: 5rem 2rem;
+  }
+
+  .container{
+    width: 92%;
+  }
+
+  .title{
+    font-size: 2.7rem;
+  }
+
+  .subtitle{
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .cards-wrapper{
+    gap: 1.8rem;
+  }
+
+  .service-card{
+    max-width: 320px;
+    padding: 1.8rem;
+  }
+
+  .icon{
+    font-size: 42px;
+  }
 }
 
-@media(max-width:600px){
-  .title{font-size:2rem;}
-  .subtitle{font-size:1rem;}
+
+/* Large Mobile / Tablet Portrait */
+@media (max-width: 768px){
+
+  .services-page{
+    padding: 4.5rem 1.5rem;
+    align-items: flex-start;
+  }
+
+  .container{
+    width: 100%;
+  }
+
+  .title{
+    font-size: 2.2rem;
+    line-height: 1.25;
+  }
+
+  .subtitle{
+    font-size: 1rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .cards-wrapper{
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .service-card{
+    max-width: 90%;
+    padding: 1.6rem;
+  }
+
+  .icon{
+    font-size: 38px;
+  }
+}
+
+
+/* Small Mobile */
+@media (max-width: 480px){
+
+  .services-page{
+    padding: 4rem 1.2rem;
+  }
+
+  .title{
+    font-size: 1.9rem;
+  }
+
+  .subtitle{
+    font-size: 0.95rem;
+  }
+
+  .service-card{
+    max-width: 100%;
+    padding: 1.4rem;
+    border-radius: 14px;
+  }
+
+  .icon{
+    font-size: 34px;
+  }
 }
 
 /******** gradient animation *********/
