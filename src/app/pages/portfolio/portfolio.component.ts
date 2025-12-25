@@ -14,13 +14,14 @@ export class PortfolioComponent implements AfterViewInit {
       link: "https://company-website-d35cc.web.app",
       img: "assets/portfolio/company-site.jpeg"
     },
-    {
-      title: "Sterexa Biopharm LLP",
-      desc: "Corporate website for Sterexa Biopharm LLP featuring products, services, and contact information. Mobile-first responsive design and smooth user experience.",
-      tech: "Angular • HTML • SCSS • Typescript",
-      link: "https://sterexa-website.vercel.app/",
-      img: "assets/portfolio/sterexa-site.jpeg"
-    },
+   {
+  title: "Dnyaneshwari Ladies Tailors",
+  desc: "Homegrown ladies tailoring business offering blouse stitching, Pico-Fall, and alteration services. Mobile-first responsive design with smooth user experience and visually appealing animated gradient backgrounds.",
+  tech: "Angular • HTML • CSS • Typescript",
+  link: "https://dnyaneshwari-ladies-tailors-891n.vercel.app/",
+  img: "assets/portfolio/dnyaneshwari-ladies-tailors.png"
+},
+
     {
       title: "DK Web Alliance",
       desc: "Professional business website for DK Web Alliance highlighting services, portfolio, and contact options. Clean modern UI/UX with interactive elements and gradient backgrounds.",
